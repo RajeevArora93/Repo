@@ -10,7 +10,13 @@ namespace CurrencyConverter
     {
         static void Main(string[] args)
         {
-            //Some code
+            UserInterface userInterface = new UserInterface();
+            CurrencyConverter currencyConverter = new CurrencyConverter();
+
+            userInterface.UserInputString();
+
+            Console.ReadLine();
         }
     }
 }
+
