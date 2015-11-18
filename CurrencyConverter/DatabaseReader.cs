@@ -8,12 +8,12 @@ namespace CurrencyConverter
 {
     public class DatabaseReader
     {
-        public List<Currencies> ReadDatabase()
+
+        public Dictionary<string, List<double>> dictionaryOfCurrencies()
         {
-            
-            return null;
+            Dictionary<string, List<double>> dictionaryOfCurrencies = new Dictionary<string, List<double>>();
+            return dictionaryOfCurrencies;
         }
-        public void rate() { }
 
     }
 }

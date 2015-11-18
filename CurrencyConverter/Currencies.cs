@@ -8,5 +8,9 @@ namespace CurrencyConverter
 {
     public class Currencies
     {
+
+        //string nameOfCurrency;
+
+       //double exchangeRate;
     }
 }
