@@ -10,10 +10,7 @@ namespace CurrencyConverter
     {
         public double Average(Currencies currency, DatabaseReader reader)
         {
-            if (currency in reader )
-            {
-                
-            }
+
         }
 
     }
