@@ -130,6 +130,7 @@ namespace UserInterfaceTest
             Assert.AreEqual(2.0, averageRate);
         }
 
+
         //[TestMethod]
         //public void Test_()
         //{

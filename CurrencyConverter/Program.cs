@@ -12,6 +12,20 @@ namespace CurrencyConverter
 
         static void Main(string[] args)
         {
+            
+            OtherCurrencyFunction list = new OtherCurrencyFunction();
+
+            XmlRatesReader reader = new XmlRatesReader();
+
+            Tuple<int, string> intString = new Tuple<int,string>(1234, "date1");
+            Tuple<string, string> stringString = new Tuple<string, string>("GBP", "1.5");
+
+            dictionary.Add(intString, stringString);
+
+            list.listInOrderOfStrength(dictionary, "GBP");
+
+
+
             //Currencies currency = new Currencies();
             //Averager averager = new Averager();
             //DatabaseReader reader = new DatabaseReader();

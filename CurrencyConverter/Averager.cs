@@ -40,37 +40,37 @@ namespace CurrencyConverter
 
         //Recoded to accpet dictionary with double values
 
-        public double Average(string currency, Dictionary<Tuple<int, string>, Tuple<string, string>> DictionaryOfRatesAndCurrencies)
-        {
-            double average = 0;
+        //public double Average(string currency, Dictionary<Tuple<int, string>, Tuple<string, string>> DictionaryOfRatesAndCurrencies)
+        //{
+        //    double average = 0;
 
-            double sumOfCurrencies = 0;
+        //    double sumOfCurrencies = 0;
 
-            var numberOfRates = 0;
+        //    var numberOfRates = 0;
 
-            Dictionary<string, string> currenciesAndRates = DictionaryOfRatesAndCurrencies.Values.ToDictionary(; //Convert to string string
+        //    Dictionary<string, string> currenciesAndRates = DictionaryOfRatesAndCurrencies.Values.ToDictionary(; //Convert to string string
 
 
-            //Console.WriteLine(ListOfRatesPerCurrency.Count);
-            foreach (KeyValuePair<string, List<double>> entry in currenciesAndRates)
-            {
-                Console.WriteLine(entry.Value);
-                if (entry.Key == currency)
-                {
-                    numberOfRates += entry.Value.Count;
+        //    //Console.WriteLine(ListOfRatesPerCurrency.Count);
+        //    foreach (KeyValuePair<string, List<double>> entry in currenciesAndRates)
+        //    {
+        //        Console.WriteLine(entry.Value);
+        //        if (entry.Key == currency)
+        //        {
+        //            numberOfRates += entry.Value.Count;
 
-                    Console.WriteLine(numberOfRates);
+        //            Console.WriteLine(numberOfRates);
 
-                    sumOfCurrencies += entry.Value.Sum();
-                }
+        //            sumOfCurrencies += entry.Value.Sum();
+        //        }
 
-            }
+        //    }
 
-            Console.WriteLine(numberOfRates);
+        //    Console.WriteLine(numberOfRates);
 
-            average = sumOfCurrencies / numberOfRates;
+        //    average = sumOfCurrencies / numberOfRates;
 
-            return Math.Round(average, 2);
-        }
+        //    return Math.Round(average, 2);
+        //}
     }
 }
