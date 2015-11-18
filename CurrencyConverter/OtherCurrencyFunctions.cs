@@ -8,14 +8,29 @@ namespace CurrencyConverter
 {
     public class OtherCurrencyFunction 
     {
-        public List<Currencies> listInOrderOfStrength()
+        public List<Currencies> listInOrderOfStrength(Dictionary<Tuple<int, string>, Tuple<string, string>> dictionaryOfCurrenciesAndExchangeRates, string currency)
         {
-            //Do something
 
-            List<Currencies> listInOrderOfStrength = new List<Currencies>();
-
+            List<string> dictionaryOfCurrenciesAndExchangeRates.Values.ToList;
+            
             return listInOrderOfStrength;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public List<Currencies> currenciesStrongerThanEuro()
         {
