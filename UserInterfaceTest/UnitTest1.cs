@@ -130,6 +130,17 @@ namespace UserInterfaceTest
             Assert.AreEqual(2.0, averageRate);
         }
 
+        [TestMethod]
+        public void Test_ReturnsValuesGreaterThanEuro_WhenCalled()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+
+        }
+
 
         //[TestMethod]
         //public void Test_()

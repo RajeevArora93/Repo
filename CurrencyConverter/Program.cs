@@ -8,35 +8,34 @@ namespace CurrencyConverter
 {
     class Program
     {
-        static CurrencyConverter currencyConverter = new CurrencyConverter();
 
         static void Main(string[] args)
         {
             
             OtherCurrencyFunction list = new OtherCurrencyFunction();
 
-            XmlRatesReader reader = new XmlRatesReader();
+            XmlRatesReader reader = new XmlRatesReader(@"H:\CurrencyConverter\CurrencyConverter\CurrencyConverter\ExchangeRates.xml");
 
-            Tuple<int, string> intString = new Tuple<int,string>(1234, "date1");
-            Tuple<string, string> stringString = new Tuple<string, string>("GBP", "1.5");
-
-            dictionary.Add(intString, stringString);
-
-            list.listInOrderOfStrength(dictionary, "GBP");
+            Dictionary<Tuple<int, string>, Tuple<string, string>> dictionary = reader.GetRatesData();
 
 
+            list.listOfCurrenciesInOrderOfStrength(dictionary, "2015-11-18");
 
-            //Currencies currency = new Currencies();
-            //Averager averager = new Averager();
-            //DatabaseReader reader = new DatabaseReader();
+           //foreach (string x in list1)
+           //{
+           //    Console.WriteLine(x);
+           //}
 
-            //Dictionary<string, double> dictionary = reader.dictionaryOfCurrencies();
-            //dictionary.Add("1", 1.2);
-            //dictionary.Add("2", 1.4);
+           Console.ReadLine();
 
-           // double averageRate = averager.Average(currency, dictionary);
 
-            Console.ReadLine();
+
+
+
+
+
+
+
 
 //----------------------------------------INTERFACE------------------------------------------------------------      
       

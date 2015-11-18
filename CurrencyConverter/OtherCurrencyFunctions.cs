@@ -8,8 +8,7 @@ namespace CurrencyConverter
 {
     public class OtherCurrencyFunction 
     {
-
-        public List<string> listInOrderOfStrength(Dictionary<Tuple<int, string>, Tuple<string, string>> dictionaryOfCurrenciesAndExchangeRates, string currency)
+        public List<string> ExtractCurrencies(Dictionary<Tuple<int, string>, Tuple<string, string>> dictionaryOfCurrenciesAndExchangeRates)
         {
             //Makes a list of currencies:
 
@@ -17,72 +16,59 @@ namespace CurrencyConverter
 
             int count = 0;
 
-            foreach (Tuple<string, string> item in dictionaryOfCurrenciesAndExchangeRates.Values.Distinct()) 
+            foreach (KeyValuePair<Tuple<int, string>, Tuple<string, string>> item in dictionaryOfCurrenciesAndExchangeRates)
             {
-                listOfCurrencies.Add(item.Item1);
+                if(!listOfCurrencies.Contains(item.Value.Item2))
+                {
+                    listOfCurrencies.Add(item.Value.Item2);
+                }
 
                 count++;
-                //foreach (string x in listOfCurrencies)
-                //{
-                //    Console.WriteLine(x);
-                //}
+
             }
-
-            foreach (Tuple<string, string> rate in dictionaryOfCurrenciesAndExchangeRates.Values)
-            {
-                Console.WriteLine(rate.Item2);
-            }
-
-
-
-            double sumOfRates = 0;
-            foreach (string curr in listOfCurrencies)
-            {
-         
-                foreach (Tuple<string, string> item in dictionaryOfCurrenciesAndExchangeRates.Values)
-                {
-                    double rate = double.Parse(item.Item2);
-                    sumOfRates += rate;
-                }
-            }
-
-
-
             return listOfCurrencies;
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public List<Currencies> currenciesStrongerThanEuro()
+        public List<string> ExtractDate(Dictionary<Tuple<int, string>, Tuple<string, string>> dictionaryOfCurrenciesAndExchangeRates)
         {
-            //Do something
+            //Makes a list of dates:
+            List<string> listOfDates = new List<string>();
 
-            List<Currencies> currenciesStrongerThanEuro = new List<Currencies>();
+            int count = 0;
 
-            return currenciesStrongerThanEuro;
+            foreach (KeyValuePair<Tuple<int, string>, Tuple<string, string>> item in dictionaryOfCurrenciesAndExchangeRates)
+            {
+                if (!listOfDates.Contains(item.Key.Item2))
+                {
+                    listOfDates.Add(item.Key.Item2);
+                }
+
+                count++;
+
+            }
+            return listOfDates;
         }
 
-        public List<Currencies> HighestAndLowestCurrencies() // Hayley will do
+
+        public void listOfCurrenciesInOrderOfStrength(Dictionary<Tuple<int, string>, Tuple<string, string>> dictionaryOfCurrenciesAndExchangeRates, string date )
         {
-            //Do something
 
-            List<Currencies> highestAndLowest = new List<Currencies>();
-
-            return highestAndLowest;
+            SortedDictionary<double, string> dictionary = new SortedDictionary<double, string>();
+            foreach (KeyValuePair<Tuple<int, string>, Tuple<string, string>> i in dictionaryOfCurrenciesAndExchangeRates)
+            {
+                double rateOfE = double.Parse(i.Value.Item1);
+                
+                if (i.Key.Item2.Contains(date))
+                {
+                    dictionary.Add(Convert.ToDouble(i.Value.Item1), i.Value.Item2);
+                }
+            }
+            Console.WriteLine();
+            foreach (KeyValuePair<double, string> str in dictionary)
+            {
+                Console.WriteLine("{0} : {1}", str.Value, str.Key);
+            }
         }
     }
 }
