@@ -44,17 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllFunctions.cs" />
-    <Compile Include="Averager.cs" />
-    <Compile Include="Currencies.cs" />
-    <Compile Include="DatabaseReader.cs" />
     <Compile Include="OtherCurrencyFunctions.cs" />
     <Compile Include="CurrencyConverter.cs" />
     <Compile Include="InterfaceInputOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StrongerThanTheEuro.cs" />
-    <Compile Include="UserInterface.cs" />
     <Compile Include="XmlRatesReader.cs" />
   </ItemGroup>
   <ItemGroup>
