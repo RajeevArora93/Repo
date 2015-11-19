@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CurrencyConverter
 {
-    public class OtherCurrencyFunction 
+    public class OrderByStrength 
     {
         public List<string> ExtractCurrencies(Dictionary<Tuple<int, string>, Tuple<string, string>> dictionaryOfCurrenciesAndExchangeRates)
         {
@@ -68,7 +68,9 @@ namespace CurrencyConverter
             foreach (KeyValuePair<double, string> str in dictionary)
             {
                 Console.WriteLine("{0} : {1}", str.Value, str.Key);
+                
             }
+            Console.ReadLine();
         }
     }
 }

@@ -15,9 +15,11 @@ namespace CurrencyConverter
             //----------------------------------------INTERFACE------------------------------------------------------------  
             XmlRatesReader reader = new XmlRatesReader(@"H:\Downloads\Repo-master\Repo-master\CurrencyConverter\ExchangeRates.xml");
             Dictionary<Tuple<int, string>, Tuple<string, string>> dictionary = reader.GetRatesData();
-            OtherCurrencyFunction funcs = new OtherCurrencyFunction();
+            OrderByStrength funcs = new OrderByStrength();
             List<string> currencies = funcs.ExtractCurrencies(dictionary);
             CurrencyConverter converter = new CurrencyConverter();
+
+            OrderByStrength compare = new OrderByStrength();
 
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -116,6 +118,14 @@ namespace CurrencyConverter
                     goto Start;
                 }
             }
+            else if (firstInput == "2")
+	        {
+                Console.WriteLine("Enter date:");
+                string date = Console.ReadLine();
+                compare.listOfCurrenciesInOrderOfStrength(dictionary, date);
+
+                goto Main;
+	        }
 
             Console.ReadLine();
             //----------------------------------------INTERFACE------------------------------------------------------------    

@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OtherCurrencyFunctions.cs" />
+    <Compile Include="OrderByStrength.cs" />
     <Compile Include="CurrencyConverter.cs" />
     <Compile Include="InterfaceInputOutput.cs" />
     <Compile Include="Program.cs" />
